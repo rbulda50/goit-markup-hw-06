@@ -20,9 +20,9 @@
         <a href="./index.html" class="top-logo"><span class="logo-iris">Web</span>Studio</a>
         <nav class="top-nav">
                 <ul class="list nav">
-                    <li class="item "> <a href="./index.html" class="list-item studio-line">Studio</a> </li>
-                    <li class="item"> <a href="./portfolio.html" class="list-item">Portfolio</a> </li>
-                    <li class="item"> <a href="/" class="list-item">Contacts</a> </li>
+                    <li class="item"> <a href="./index.html" class="list-item line-const">Studio</a> </li>
+                    <li class="item"> <a href="./portfolio.html" class="list-item studio-line">Portfolio</a> </li>
+                    <li class="item"> <a href="/" class="list-item studio-line">Contacts</a> </li>
                 </ul>
             </nav>
             
@@ -47,6 +47,52 @@
                         <use href="./images/sprite.svg#icon-close"></use>
                     </svg>
                 </button>
+
+        <!-- Modal window -->
+                <p class="modal-subtitle">Leave your contacts and we will call you back</p>
+                <form autocomplete="off">
+
+                        <label class="modal-input username">
+                            <span>Name</span>
+                            <input type="text" name="name" class="input-data">
+                            <svg class="icon-username" width="18px" height="24px">
+                                <use href="./images/sprite.svg#icon-person"></use>
+                            </svg>
+                        </label>
+
+                        <label class="modal-input phonenumber" >
+                            <span>Phone</span>
+                            <input type="tel" name="phone" class="input-data">
+                            <svg class="icon-phone" width="18px" height="24px">
+                                <use href="./images/sprite.svg#icon-phone"></use>
+                            </svg>
+                        </label>
+
+                        <label class="modal-input email">
+                            <span>Email</span>
+                            <input type="email" name="email" class="input-data">
+                            <svg class="icon-email" width="18px" height="24px">
+                                <use href="./images/sprite.svg#icon-emailblack"></use>
+                            </svg>
+                        </label>
+
+                        <label class="comment">
+                            <span>Comment</span>
+                            <textarea name="feedback" class="textarea" placeholder="Text input"></textarea>
+                        </label>
+
+                        <label class="checkbox">
+                            <input type="checkbox" name="policy" class="checkbox-input">
+                            <span class="checkbox-icon">
+                                <svg width="10px" height="8px">
+                                    <use href="./images/sprite.svg#icon-vector"></use>
+                                </svg>
+                            </span>
+                            <span>I accept the terms and conditions of the <span class="privacy-policy">Privacy Policy</span></span>
+                        </label>
+
+                    <button type="submit" class="modal-submit">Send</button>
+                </form>
             </div>
         </div>
 
@@ -251,41 +297,41 @@
                 <ul class="list list-customers">
                     <li>
                         <a href="/" class="company">
-                            <svg class="company-icon" width="41px" height="47px">
+                            <svg width="41px" height="47px">
                                 <use href="./images/sprite.svg#icon-company1"></use>
                             </svg>
                     </a>
                 </li>
                     <li>
                         <a href="/" class="company">
-                            <svg class="company-icon" width="40px" height="52px">
+                            <svg width="40px" height="52px">
                                 <use href="./images/sprite.svg#icon-company2"></use>
                             </svg>
                     </a>
                 </li>
                     <li>
                         <a href="/" class="company">
-                        <svg class="company-icon" width="44px" height="41px">
+                        <svg width="44px" height="41px">
                             <use href="./images/sprite.svg#icon-company3"></use>
                         </svg>
                     </a></li>
                     <li>
                         <a href="/" class="company">
-                        <svg class="company-icon" width="84px" height="41px">
+                        <svg width="84px" height="41px">
                             <use href="./images/sprite.svg#icon-company4"></use>
                         </svg>
                     </a>
                 </li>
                     <li>
                         <a href="/" class="company">
-                        <svg class="company-icon" width="63px" height="45px">
+                        <svg width="63px" height="45px">
                             <use href="./images/sprite.svg#icon-company5"></use>
                         </svg>
                     </a>
                 </li>
                     <li>
                         <a href="/" class="company">
-                        <svg class="company-icon" width="94px" height="44px">
+                        <svg width="94px" height="44px">
                             <use href="./images/sprite.svg#icon-company6"></use>
                         </svg>
                     </a>
@@ -330,6 +376,18 @@
                 </ul>
             </div>
         </div>
+        
+        <form name="subscribe">
+            <p class="subscribe-title">Subscribe</p>
+                <div class="form-subscribe">
+                    <input type="email" name="mail" id="mail" placeholder="E-mail" class="input-mail">
+                    <button type="submit" class="btn-submit">Subscribe
+                        <svg class="icon-subscribe">
+                            <use href="./images/sprite.svg#icon-plane"></use>
+                        </svg>
+                    </button>
+                </div>
+        </form>
     </div>
     </footer>
     <script src="./js/modal.js"></script>

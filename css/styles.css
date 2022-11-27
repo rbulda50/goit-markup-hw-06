@@ -135,38 +135,45 @@ header {
 }
 
 /* Положення поточної сторінки(синя лінія під nav) */
-.studio-line {
+.list-item {
     position: relative;
 }
 
 .studio-line::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
+
     width: 100%;
     height: 4px;
 
     border-radius: 2px;
     background-color: #4D5AE5;
+
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-line {
-    position: relative;
+.studio-line:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
-.portfolio-line::after {
-    content: '';
+.line-const::after {
+    content: "";
     position: absolute;
+    bottom: 0;
+    left: 0;
+    
     width: 100%;
     height: 4px;
-    bottom: 0;
-    right: 0;
-
+    
     border-radius: 2px;
     background-color: #4D5AE5;
 }
-
 
 /* main */
 /* section 1 - hero */
@@ -456,6 +463,84 @@ header {
     margin-top: 0;
 }
 
+.subscribe-title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding: 0;
+
+    color: #ffffff;
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+.form-subscribe {
+    display: flex;
+}
+
+.container-footer > form {
+    margin-left: 80px;
+}
+
+.input-mail {
+    
+    margin-right: 24px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-top: 8px;
+
+    width: 264px;
+    height: 40px;
+    
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1.5;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+}
+
+
+.input-mail::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+}
+
+.input-mail:focus {
+    border: 2px solid #ffffff;
+}
+
+.btn-submit {
+    display: flex;
+    align-items: center;
+    padding: 8px 24px;
+
+    width: 168px;
+    height: 40px;
+
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+    font-weight: 700;
+    background-color: #4D5AE5;
+    color: #ffffff;
+    cursor: pointer;
+    border: transparent;
+    border-radius: 4px;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+    background-color: #404BBF;
+}
+
+.icon-subscribe {
+    margin-left: 16px;
+    width: 24px;
+    height: 24px;
+}
+
 
 /* styles portfolio */
 /* buttons under header */
@@ -629,6 +714,10 @@ header {
     top: 50%;
     transform: translate(-50%, -50%);
 
+    padding-top: 72px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
     width: 408px;
     height: 576px;
 
@@ -639,8 +728,187 @@ header {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-input {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+}
 
+.modal-subtitle {
+    margin: 0;
+    margin-bottom: 16px;
+    
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+}
 
+.icon-username {
+    position: absolute;
+    left: 16px;
+    bottom: 8px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-phone {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-email {
+    position: absolute;
+    left: 16px;
+    bottom: 8px;
+    
+}
+
+.username span,
+.phonenumber span, 
+.email span,
+.comment span {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    font-weight: 400;
+    color: #8E8F99;
+}
+
+.input-data {
+    position: relative;
+
+    width: 360px;
+    height: 40px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+    padding-left: 34px;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-data:focus,
+.input-data:focus ~ .icon-email,
+.input-data:focus ~ .icon-phone,
+.input-data:focus ~ .icon-username {
+    border-color: #4D5AE5;
+    fill: #4D5AE5;
+}
+
+.comment,
+.checkbox {
+    display: inline-block;
+}
+
+.textarea {
+    width: 360px;
+    height: 120px;
+    padding: 8px 16px;
+
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    color: rgba(117, 117, 117, 0.5);
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    outline: none;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textarea::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+}
+
+.textarea:focus {
+    border: 1px solid #4D5AE5;
+    color: inherit;
+    font-size: inherit;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+.checkbox .privacy-policy {
+    color: #4D5AE5;
+}
+
+.checkbox span {
+    color: #757575;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+}
+
+.checkbox-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+
+    width: 16px;
+    height: 16px;
+
+    border: 1.25px solid #2E2F42;
+    border-radius: 2px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox-input:checked + .checkbox-icon{
+    background-color: #4D5AE5;
+    border: transparent;
+}   
+
+.checkbox-input {
+    appearance: none;
+}
+
+.modal-submit {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+
+    width: 170px;
+    height: 51px;
+    padding: 16px 32px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+
+    color: #FFFFFF;
+    background-color: #4D5AE5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: transparent;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-submit:hover,
+.modal-submit:focus {
+    background: #404BBF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
 
 /* кнопка close */
 .modal-close {
@@ -665,6 +933,7 @@ header {
 
 .modal-close:hover,
 .modal-close:focus {
+    border: transparent;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
                 0px 1px 1px rgba(46, 47, 66, 0.16), 
                 0px 2px 1px rgba(46, 47, 66, 0.08);
